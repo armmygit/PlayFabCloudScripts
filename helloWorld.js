@@ -5,24 +5,32 @@ handlers.helloWorld = function (args)
 	return { messageValue: message };
 }
 
-handlers.SetCoin = function (args)
+handlers.UpdateCurrency = function (args)
 {
-	var result = server.AddUserVirtualCurrency({
-		PlayFabId: currentPlayerId,
-		VirtualCurrency: args.code,
-		Amount: args.amount
-	});
+	if(args.amount>=0){
+		var addCurrencyResult = server.AddUserVirtualCurrency({
+			PlayFabId: currentPlayerId,
+			VirtualCurrency: args.code,
+			Amount: args.amount
+		});
+	}else{
+		var subtractCurrencyResult = server.SubtractUserVirtualCurrency({
+			PlayFabId: currentPlayerId,
+			VirtualCurrency: args.code,
+			Amount: args.amount
+		});
+	}
 	
-	var dataKey = "COIN_KEY";
-	var dataValue = "1111";
+	//var dataKey = "COIN_KEY";
+	//var dataValue = "1111";
 	
 	var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: currentPlayerId,
 		Data: {
-			dataKey: dataValue
+			args.key: args.curAmount
 		},
 		Permission: "Public"
 	});
 
-	return result;
+	return "OK";
 }
