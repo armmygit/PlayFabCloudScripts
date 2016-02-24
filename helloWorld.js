@@ -13,7 +13,7 @@ handlers.SetCoin = function (args)
 		Amount: args.amount
 	});
 	
-	var dataKey = args.code;
+	var dataKey = "COIN_KEY";
 	var dataValue = args.curCoin;
 	
 	var updateUserDataResult = server.UpdateUserData({
