@@ -14,14 +14,15 @@ handlers.SetCoin = function (args)
 	});
 	
 	var dataKey = "COIN_KEY";
-	var dataValue = "00000";
+	var dataValue = "1111";
 	
 	var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: currentPlayerId,
 		Data: {
 			dataKey: dataValue
-		}
+		},
+		Permission: "Public"
 	});
 
-	//return result;
+	return result;
 }
