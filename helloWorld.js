@@ -20,9 +20,7 @@ handlers.UpdateCurrency = function (args)
 			Amount: args.amount
 		});
 	}
-	
-	//var dataKey = "COIN_KEY";
-	//var dataValue = "1111";
+
 	var dict ={};
 	dict[args.key]= args.curAmount;
 	
