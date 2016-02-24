@@ -23,12 +23,12 @@ handlers.UpdateCurrency = function (args)
 	
 	//var dataKey = "COIN_KEY";
 	//var dataValue = "1111";
+	var dict ={};
+	dict[args.key]= args.curAmount;
 	
 	var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: currentPlayerId,
-		Data: {
-			args.key: args.curAmount
-		},
+		Data: dict,
 		Permission: "Public"
 	});
 
