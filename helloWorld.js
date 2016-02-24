@@ -15,11 +15,3 @@ handlers.SetCoin = function (args)
 
   return result;
 }
-handlers.userData = function (args)
-{
-  var result = server.GetUserAccountInfo({
-    PlayFabId: args.pId
-  });
-
-  return result;
-}
