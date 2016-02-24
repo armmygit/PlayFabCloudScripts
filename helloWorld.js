@@ -17,7 +17,7 @@ handlers.UpdateCurrency = function (args)
 		var subtractCurrencyResult = server.SubtractUserVirtualCurrency({
 			PlayFabId: currentPlayerId,
 			VirtualCurrency: args.code,
-			Amount: args.amount
+			Amount: args.amount*-1
 		});
 	}
 
