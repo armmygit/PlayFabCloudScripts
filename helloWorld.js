@@ -14,7 +14,7 @@ handlers.SetCoin = function (args)
 	});
 	
 	var dataKey = "COIN_KEY";
-	var dataValue = args.curCoin;
+	var dataValue = "00000";
 	
 	var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: currentPlayerId,
@@ -24,5 +24,5 @@ handlers.SetCoin = function (args)
 		Permission: true
 	});
 
-	return result;
+	//return result;
 }
