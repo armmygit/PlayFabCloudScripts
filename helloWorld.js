@@ -16,11 +16,7 @@ handlers.SetCoin = function (args)
 	var data={};
 	data[args.code]=args.curCoin;
 	
-	server.UpdateUserData  ({
-		PlayFabId: currentPlayerId,
-		Data: data,
-		Permission: true
-	});
+	
 	
 	return result;
 }
