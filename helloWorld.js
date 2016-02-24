@@ -12,13 +12,10 @@ handlers.SetCoin = function (args)
 		VirtualCurrency: args.code,
 		Amount: args.amount
 	});
-
-	var data={};
-	data[args.code]=args.curCoin;
 	
 	var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: currentPlayerId,
-		Data: data,
+		Data: {args.code:args.curCoin},
 		Permission: true
 	});
 
