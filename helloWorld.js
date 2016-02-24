@@ -20,8 +20,7 @@ handlers.SetCoin = function (args)
 		PlayFabId: currentPlayerId,
 		Data: {
 			dataKey: dataValue
-		},
-		Permission: true
+		}
 	});
 
 	//return result;
