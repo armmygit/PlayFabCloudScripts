@@ -32,3 +32,11 @@ handlers.UpdateCurrency = function (args)
 
 	return "OK";
 }
+
+handlers.SendPush = function (args)
+{
+	var sendPushNotificationResult = server.SendPushNotification({
+			Recipient: args.playFabId,
+			Message: args.message
+	});
+}
