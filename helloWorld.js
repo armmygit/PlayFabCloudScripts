@@ -36,7 +36,7 @@ handlers.UpdateCurrency = function (args)
 handlers.SendPush = function (args)
 {
 	var sendPushNotificationResult = server.SendPushNotification({
-			Recipient: args.playFabId,
-			Message: args.message
+		Recipient: args.playFabId,
+		Message: args.message
 	});
 }
