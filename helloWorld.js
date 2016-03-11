@@ -37,6 +37,7 @@ handlers.SendPush = function (args)
 {
 	var sendPushNotificationResult = server.SendPushNotification({
 		Recipient: args.playFabId,
-		Message: args.message
+		Message: args.message,
+		Subject: "Wind Walker"
 	});
 }
