@@ -37,7 +37,7 @@ handlers.SendPush = function (args)
 {
 	if(args.roomName!=""){
 		var dict ={};
-		dict["Room"] = args.roomName;
+		dict["ROOM_KEY"] = args.roomName;
 		
 		var updateUserDataResult = server.UpdateUserData({
 		PlayFabId: args.playFabId,
