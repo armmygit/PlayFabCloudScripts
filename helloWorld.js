@@ -35,9 +35,19 @@ handlers.UpdateCurrency = function (args)
 
 handlers.SendPush = function (args)
 {
+	if(args.roomName!=""){
+		var dict ={};
+		dict["Room"] = args.roomName;
+		
+		var updateUserDataResult = server.UpdateUserData({
+		PlayFabId: args.playFabId,
+		Data: dict,
+		Permission: "Public"
+		});
+	}
+	
 	var sendPushNotificationResult = server.SendPushNotification({
 		Recipient: args.playFabId,
-		Message: args.message,
-		Subject: "Wind Walker"
+		Message: args.message
 	});
 }
